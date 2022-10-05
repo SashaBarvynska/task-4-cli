@@ -28,7 +28,7 @@ def test_compare_get_unique_values_amount(test_input, expected):
     "test_input",
     [
         (123),
-        ({"Saasha": "ahsaS", "python123": "nohtyp123"}),
+        (False),
     ],
 )
 def test_check_wrong_type_only_list_or_str(test_input):
@@ -38,7 +38,11 @@ def test_check_wrong_type_only_list_or_str(test_input):
 
 
 @pytest.mark.parametrize(
-    "test_input,expected", [("cache_info" in dir(get_unique_values_amount), True)]
+    "test_input,expected",
+    [
+        ("cache_parameters" in dir(get_unique_values_amount), True),
+        ("__wrapped__" in dir(get_unique_values_amount), True),
+    ],
 )
 def test_function_contains_cache(test_input, expected):
     assert test_input == expected
