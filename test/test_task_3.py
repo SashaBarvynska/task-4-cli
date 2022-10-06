@@ -18,7 +18,7 @@ def test_compare_avoid_mistake(test_input, expected):
 
 @pytest.mark.parametrize(
     "test_input,expected",
-    [("aab", 1), ("abbbccdf", 3), (("apple"), 3)],
+    [("aab", 1), ("abbbccdf", 3), ("apple", 3)],
 )
 def test_compare_get_unique_values_amount(test_input, expected):
     assert get_unique_values_amount(test_input) == expected
@@ -27,8 +27,8 @@ def test_compare_get_unique_values_amount(test_input, expected):
 @pytest.mark.parametrize(
     "test_input",
     [
-        (123),
-        (False),
+        123,
+        False,
     ],
 )
 def test_check_wrong_type_only_list_or_str(test_input):
@@ -39,10 +39,7 @@ def test_check_wrong_type_only_list_or_str(test_input):
 
 @pytest.mark.parametrize(
     "test_input,expected",
-    [
-        ("cache_parameters" in dir(get_unique_values_amount), True),
-        ("__wrapped__" in dir(get_unique_values_amount), True),
-    ],
+    [(hasattr(get_unique_values_amount, "__wrapped__"), True)]
 )
 def test_function_contains_cache(test_input, expected):
     assert test_input == expected
