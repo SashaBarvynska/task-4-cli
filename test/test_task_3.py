@@ -37,9 +37,5 @@ def test_check_wrong_type_only_list_or_str(test_input):
     assert str(error.value) == "Argument must be a string, list, tuple or set"
 
 
-@pytest.mark.parametrize(
-    "test_input,expected",
-    [(hasattr(get_unique_values_amount, "__wrapped__"), True)]
-)
-def test_function_contains_cache(test_input, expected):
-    assert test_input == expected
+def test_function_contains_cache():
+    assert hasattr(get_unique_values_amount, "__wrapped__")
