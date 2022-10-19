@@ -9,7 +9,6 @@ args = parser.parse_args()
 
 if args.string is None and args.file is None:
     parser.error("at least one of --string and --file required")
-
 if args.file is not None:
     f = open(f"../{args.file}", "r")
     avoid_mistake(str(f.read()))
