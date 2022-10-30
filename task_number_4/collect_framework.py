@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, Namespace
 
-from task_number_3.task_3 import avoid_mistake
+from task_number_4.task_4 import avoid_mistake
 
 
 def init_parser() -> Namespace:
@@ -8,19 +8,16 @@ def init_parser() -> Namespace:
     parser.add_argument("--string")
     parser.add_argument("--file")
     args = parser.parse_args()
-    print(vars(args))
-    print(vars(args)["string"])
-    return vars(args)
+    return args
 
 
-def main():
+def main() -> int:
     args = init_parser()
-    if not args["string"] and not args["file"]:
-        raise Exception("at least one of --string and --file required")
-    if args["file"]:
-        return avoid_mistake(str(open_file(args["file"])))
-    if args["string"]:
-        return avoid_mistake(args["string"])
+    if not args.string and not args.file:
+        raise Exception("At least one of --string and --file required")
+    elif args.file:
+        return avoid_mistake(open_file(args.file))
+    return avoid_mistake(args.string)
 
 
 def open_file(file_path: str) -> str:
