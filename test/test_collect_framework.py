@@ -27,6 +27,7 @@ def test_main_with_file(mock_open_file, mock_avoid_mistake, mock_init_parser):
     assert main() == 3
     mock_open_file.assert_called_with("demo.txt")
     mock_avoid_mistake.assert_called_with("demo string")
+    mock_init_parser.asssert_called_once()
 
 
 @patch(
@@ -37,6 +38,7 @@ def test_main_with_file(mock_open_file, mock_avoid_mistake, mock_init_parser):
 def test_main_with_string(mock_avoid_mistake, mock_init_parser):
     assert main() == 3
     mock_avoid_mistake.assert_called_with("Python")
+    mock_init_parser.asssert_called_once()
 
 
 @patch("builtins.open", side_effect=FileNotFoundError)

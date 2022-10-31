@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, Namespace
 
-from task_number_4.task_4 import avoid_mistake
+from .task_4 import avoid_mistake
 
 
 def init_parser() -> Namespace:
