@@ -3,7 +3,7 @@ from unittest.mock import mock_open, patch
 
 import pytest
 
-from task_number_4.collect_framework import main, open_file
+from task_number_4 import main, open_file
 
 
 @patch(
