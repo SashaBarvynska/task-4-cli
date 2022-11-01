@@ -1,6 +1,6 @@
 import pytest
 
-from task_number_3 import avoid_mistake, get_unique_values_amount
+from task_number_4 import avoid_mistake, get_unique_values_amount
 
 
 @pytest.mark.parametrize(
