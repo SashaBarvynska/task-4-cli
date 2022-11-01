@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, Namespace
 
-from .task_4 import avoid_mistake
+from task_number_4.task_4 import avoid_mistake
 
 
 def init_parser() -> Namespace:
@@ -26,7 +26,3 @@ def open_file(file_path: str) -> str:
             return reader.read()
     except FileNotFoundError:
         raise FileNotFoundError(f"File {file_path} does not exist")
-
-
-if __name__ == "__main__":
-    main()
