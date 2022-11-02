@@ -22,4 +22,6 @@ def get_unique_values_amount(string: str or tuple) -> int:
     return len(
         list(filter(lambda key: result_dict[key] == 1, result_dict := Counter(string)))
     )
-print("Sasha")
+
+
+print("Sashahjgh")
