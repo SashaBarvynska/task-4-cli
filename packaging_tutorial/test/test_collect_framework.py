@@ -2,7 +2,6 @@ from argparse import Namespace
 from unittest.mock import mock_open, patch
 
 import pytest
-
 from task_number_4 import main, open_file
 
 file_example = "demo.txt"
